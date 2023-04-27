@@ -6,7 +6,11 @@ Repo for earth lab capstone project. Where do objects go on the ocean floor? Wor
 Python(Jupyter notebook) + Conda
 
 ## Usage
-The dbSeaBed KML must be read in google earth.
+
+1. Download Artifical Reef KMZ [here](https://deq.nc.gov/marine-fisheries/coastal-fishing-information/artificial-reefs/reef-kmz-file/open)
+2. Change the extention to `.zip`
+3. Unzip the file - it will return a `.kml` and a `.xsl`. Rename the KML to `Reef_Material.kml` and move it to `earth-analytics/data/earthpy-downloads/`
+
 
 ## License
 See [License](https://github.com/rmarowitz/seafloor-objects/blob/main/LICENSE)
