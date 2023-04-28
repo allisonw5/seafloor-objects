@@ -1,0 +1,42 @@
+name: Run Notebooks
+
+on:
+  push:
+    branches:
+      - '*'
+
+jobs:
+  runtests:
+    name: conda ubuntu-latest
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    defaults:
+      run:
+        shell: bash -l {0}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          miniconda-version: 'latest'
+          channels: conda-forge
+          channel-priority: true
+          auto-update-conda: false
+          auto-activate-base: false
+          environment-file: environment.yml
+          activate-environment: ea-python-github
+      - name: Flake all notebooks
+        run: |
+          # Loop through all notebooks and check for PEP-8
+          for i in *.ipynb; 
+          do flake8_nb \
+            --notebook-cell-format '{nb_path}:cell#{total_cell_count}' \
+            --ignore=F821 \
+            $i;
+          done
+        continue-on-error: true
+      - name: Run all notebooks
+        run: |
+          # Loop through all notebooks and run them using papermill
+          for i in *.ipynb; do papermill $i testing.ipynb;
+          done
