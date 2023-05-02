@@ -16,4 +16,4 @@ Python(Jupyter notebook) + Conda
 See [License](https://github.com/rmarowitz/seafloor-objects/blob/main/LICENSE)
 
 ## Credit
-This software was developed by Robyn Marowitz and Allison W.
+This software was developed by Robyn Marowitz and Allison Buchanan
