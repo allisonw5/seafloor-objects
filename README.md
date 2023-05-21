@@ -11,6 +11,8 @@ Python(Jupyter notebook) + Conda
 2. Change the extention to `.zip`
 3. Unzip the file - it will return a `.kml` and a `.xsl`. Rename the KML to `Reef_Material.kml` and move it to `earth-analytics/data/earthpy-downloads/`
 
+All images are held in the `img` directory.
+
 
 ## License
 See [License](https://github.com/rmarowitz/seafloor-objects/blob/main/LICENSE)
