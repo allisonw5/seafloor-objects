@@ -1,13 +1,14 @@
-name: ea-python-github
+name: seafloor-objects
 channels:
   - conda-forge
   - defaults
 
 dependencies:
   - python=3.8
-  # Core scientific python
-  - matplotlib
   - pandas
+  - geopandas
+  - rasterio
+  - folium
 
   # Spatial packages
   - earthpy>=0.9.2
@@ -16,4 +17,4 @@ dependencies:
   - papermill
 
   # PEP 8
-  - flake8_nb
+  # - flake8_nb
