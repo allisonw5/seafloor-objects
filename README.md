@@ -36,3 +36,5 @@ See [License](https://github.com/rmarowitz/seafloor-objects/blob/main/LICENSE)
 
 ## Credit
 This software was developed by Robyn Marowitz and Allison Buchanan
+[![DOI](https://zenodo.org/badge/627546755.svg)](https://zenodo.org/badge/latestdoi/627546755)
+
