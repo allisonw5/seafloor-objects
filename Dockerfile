@@ -1,5 +1,7 @@
 FROM jupyter/minimal-notebook
 
+USER jovyan
+
 MAINTAINER Robyn Marowitz & Allison Windecomb
 
 COPY environment.yml environment.yml
