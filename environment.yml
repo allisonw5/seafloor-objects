@@ -31,7 +31,7 @@ dependencies:
   - geojson
   - mapboxgl
   - hydrofunctions
- # - geocoder
+  - geocoder
   - tweepy
   - xarray
   - rioxarray>=0.3.0
