@@ -1,41 +1,22 @@
-name: Update Environment
+FROM jupyter/minimal-notebook
 
-on:
-  push:
-    branches: [ "main" ]
-    paths:
-      - 'environment.yml'
-      - 'Dockerfile'
-  pull_request:
-    branches: [ "main" ]
-    paths:
-      - 'environment.yml'
-      - 'Dockerfile'
-      
-jobs:
+USER jovyan
 
-  build:
+RUN conda update conda 
+RUN conda config --remove channels conda-forge
+RUN conda config --add channels conda-forge
+RUN conda config --set channel_priority strict
 
-    runs-on: ubuntu-latest
+COPY environment.yml /home/jovyan/
+RUN mamba env update -n base -f /home/jovyan/environment.yml
+# using ~/.bash_profile instead of ~/.bashrc for non-interactive tty (-it) containers
+RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> /home/jovyan/.bash_profile && \
+    echo "conda deactivate" >> /home/jovyan/.bash_profile && \
+    echo "conda activate base" >> /home/jovyan/.bash_profile
+RUN . /opt/conda/etc/profile.d/conda.sh && conda activate base && python -m ipykernel install --user --name base     
+RUN source /home/jovyan/.bash_profile
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3.5.2
+COPY ea-capstone-2023.ipynb /home/jovyan/
 
-      - name: Login to DockerHub
-        uses: docker/login-action@v1
-        with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
-
-      - name: Build and push image
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          context: ./
-          file: ./Dockerfile
-          push: true
-          tags: eculler/example_env:latest
-
-      - name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+# # Install JupyterLab widget extensions
+# RUN jupyter labextension install \
