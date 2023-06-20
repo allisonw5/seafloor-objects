@@ -38,7 +38,7 @@ dependencies:
   - scipy
   - netcdf4
   - nc-time-axis
-  - regionmask
+  # - regionmask
   
   - georasters
 
