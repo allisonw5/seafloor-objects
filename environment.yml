@@ -5,7 +5,7 @@ channels:
   - conda-forge/label/broken
 
 dependencies:
-  - python=3.8
+  - python
   - pip
   # Core scientific python
   - numpy
