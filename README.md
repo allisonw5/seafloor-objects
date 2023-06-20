@@ -29,6 +29,8 @@ This repository uses these types of input data:
 - TIF
 - ASC
 
+### Runtime instrctions  
+Activate conda environment - `conda activate seafloor-objects` (if the environment doesn't exist first run `conda env create`)
 This can be run by selecting `run all` at the top of the jupyter notebook as long as the conda environment is activated.
 
 ## License
@@ -36,3 +38,5 @@ See [License](https://github.com/rmarowitz/seafloor-objects/blob/main/LICENSE)
 
 ## Credit
 This software was developed by Robyn Marowitz and Allison Buchanan
+[![DOI](https://zenodo.org/badge/627546755.svg)](https://zenodo.org/badge/latestdoi/627546755)
+

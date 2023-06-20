@@ -39,6 +39,9 @@ dependencies:
   - netcdf4
   - nc-time-axis
   - regionmask
+  
+  - georasters
+
 
   # Natural language processing
   - nltk
