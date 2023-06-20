@@ -16,7 +16,6 @@ dependencies:
   - rasterstats
   - geopy
   - cartopy
-  - descartes
   - earthpy
   - folium
   - geojson
