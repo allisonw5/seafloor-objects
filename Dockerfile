@@ -16,7 +16,7 @@ RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> /home/jovyan/.bash_profile && 
 RUN . /opt/conda/etc/profile.d/conda.sh && conda activate base && python -m ipykernel install --user --name base     
 RUN source /home/jovyan/.bash_profile
 
-COPY example-project.ipynb /home/jovyan/
+COPY ea-capstone-2023.ipynb /home/jovyan/
 
 # # Install JupyterLab widget extensions
 # RUN jupyter labextension install \
