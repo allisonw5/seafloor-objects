@@ -1,7 +1,7 @@
 name: seafloor-objects
 channels:
   - conda-forge
-  - no-defaults
+  - defaults
 
 dependencies:
   - python~=3.8
