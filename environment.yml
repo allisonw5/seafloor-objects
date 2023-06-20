@@ -19,7 +19,6 @@ dependencies:
   - earthpy
   - folium
   - geojson
-  - tweepy
   - xarray
   - rioxarray
   - scipy
