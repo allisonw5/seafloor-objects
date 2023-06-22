@@ -16,6 +16,7 @@ RUN echo ". /opt/conda/etc/profile.d/conda.sh" >> /home/jovyan/.bash_profile && 
 RUN . /opt/conda/etc/profile.d/conda.sh && conda activate base && python -m ipykernel install --user --name base     
 RUN source /home/jovyan/.bash_profile
 
+RUN git clone git://github.com/rmarowitz/seafloor-objects.git
 COPY ea-capstone-2023.ipynb /home/jovyan/
 
 # # Install JupyterLab widget extensions
