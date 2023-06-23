@@ -35,7 +35,7 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: eculler/example_env:latest
+          tags: rmarow/seafloor-objects:latest
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}

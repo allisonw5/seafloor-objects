@@ -2,58 +2,32 @@ name: seafloor-objects
 channels:
   - conda-forge
   - defaults
-  - conda-forge/label/broken
 
 dependencies:
-  - python=3.8
-  - pip
+  - python~=3.8
   # Core scientific python
   - numpy
-  - pyqt
-  - tqdm
-  - kiwisolver
 
   # Plotting
   - matplotlib
-  - plotly
   - seaborn
 
   # Spatial packages
-  - pysal
-  - pyproj>=3.0
   - rasterstats
   - geopy
   - cartopy
-  - descartes
-  - contextily
   - earthpy
   - folium
   - geojson
-  - mapboxgl
-  - hydrofunctions
-  - geocoder
-  - tweepy
   - xarray
-  - rioxarray>=0.3.0
+  - rioxarray
   - scipy
-  - netcdf4
-  - nc-time-axis
-  - regionmask
-  
+  - netcdf4  
   - georasters
-
-
-  # Natural language processing
-  - nltk
-  - textblob
 
   # Jupyter Environment
   - papermill
   - autopep8
   - jupyterlab
   - notebook
-  - ipython
-  - jupyter_contrib_nbextensions
-  - nbclean
-  - nbresuse
 
