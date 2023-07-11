@@ -32,7 +32,7 @@ def read_kml(kml_fp: str):
     return gdf
 
 
-# Turn geometry into Lattitude and longitude, create desired format
+# Turn geometry into Latitude and longitude, create desired format
 def create_refined_df(gdf: gpd.GeoDataFrame):
     """
     Build dataframe with desired columns.
