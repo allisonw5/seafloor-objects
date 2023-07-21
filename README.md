@@ -30,9 +30,9 @@ This repository uses these types of input data:
 - ASC
 
 ### Runtime instrctions  
-First you will want to navigate to the directory where you have cloned the repository from github. 
-Activate conda environment - `conda activate seafloor-objects` (if the environment doesn't exist first run `conda env create -f environment.yml`). 
-The environment.yml lists out all of the packages to be installed in the conda environment. 
+First you will want to navigate to the directory where you have cloned the repository from github.  
+Then activate the conda environment - `conda activate seafloor-objects` (if the environment doesn't exist yet first run `conda env create -f environment.yml`).  
+The environment.yml lists out all of the packages to be installed in the conda environment.  
 This can be run by selecting `run all` at the top of the jupyter notebook as long as the conda environment is activated.
 
 ## License
