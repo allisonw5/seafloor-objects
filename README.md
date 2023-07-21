@@ -19,7 +19,7 @@ Python(Jupyter notebook) + Conda
 
 1. Download Artifical Reef KMZ [here](https://deq.nc.gov/marine-fisheries/coastal-fishing-information/artificial-reefs/reef-kmz-file/open)
 2. Change the extention to `.zip`
-3. Unzip the file - it will return a `.kml` and a `.xsl`. Rename the KML to `Reef_Material.kml` and move it to `earth-analytics/data/earthpy-downloads/`
+3. Unzip the file - it will return a `.kml` and a `.xsl`. Rename the KML to `Reef_Material.kml` and move it to `~/earth-analytics/data/earthpy-downloads/`
 
 All images are held in the `img` directory.
 
@@ -30,7 +30,9 @@ This repository uses these types of input data:
 - ASC
 
 ### Runtime instrctions  
-Activate conda environment - `conda activate seafloor-objects` (if the environment doesn't exist first run `conda env create`)
+First you will want to navigate to the directory where you have cloned the repository from github. 
+Activate conda environment - `conda activate seafloor-objects` (if the environment doesn't exist first run `conda env create -f environment.yml`). 
+The environment.yml lists out all of the packages to be installed in the conda environment. 
 This can be run by selecting `run all` at the top of the jupyter notebook as long as the conda environment is activated.
 
 ## License
