@@ -31,3 +31,5 @@ dependencies:
   - jupyterlab
   - notebook
 
+  - pip:
+    - scikit-learn
