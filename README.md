@@ -27,13 +27,20 @@ All images are held in the `img` directory.
 This repository uses these types of input data:
 - KML
 - TIF
-- ASC
 
 ### Runtime instrctions  
 First you will want to navigate to the directory where you have cloned the repository from github.  
 Then activate the conda environment - `conda activate seafloor-objects` (if the environment doesn't exist yet first run `conda env create -f environment.yml`).  
 The environment.yml lists out all of the packages to be installed in the conda environment.  
 This can be run by selecting `run all` at the top of the jupyter notebook as long as the conda environment is activated.
+
+### Docker Instructions
+First download docker desktop if you do not have this installed on your computer. 
+Open a terminal and use the command "docker pull Seafloor-Objects (latest is our default tag).
+Next, use the command "docker run Seafloor-Objects." The container is now active. 
+To access the notebook, open the container on docker desktop. Press "run" and under optional settings use port 2:8888. This will open up Jupyter notebook and prompt for a token. This token can easily be found within the docker desktop terminal in the https link. Once the token is added the software will be available. 
+For more customized commands in docker see their documentation at https://docs.docker.com/engine/reference/commandline/cli/
+
 
 ## License
 See [License](https://github.com/rmarowitz/seafloor-objects/blob/main/LICENSE)
