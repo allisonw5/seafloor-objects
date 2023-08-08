@@ -28,7 +28,5 @@ dependencies:
   # Jupyter Environment
   - papermill
   - autopep8
-  - jupyterlab
-  - notebook
-
-  - scikit-learn
+  - jupyterlab~=3.6
+  - notebook~=6.5
