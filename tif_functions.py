@@ -1,6 +1,8 @@
 import pandas as pd
+import geopandas as gpd
 import rioxarray as rxr
 
+from kml_functions import bbox_gdf
 
 def read_tifs(path):
     """Read in tif files and get information from them.
@@ -22,6 +24,7 @@ def read_tifs(path):
     print("The metadata for your data is:", test.attrs)
     return None
 
+
 def night_lights_tif_to_df(filepath, name):
     """Open night lights data and trasnform to a dataframe."""
     # Open TIF and read it in array
@@ -31,6 +34,19 @@ def night_lights_tif_to_df(filepath, name):
     df = step2.to_dataframe(name).dropna()
     return df
 
+def clip_gdf(df, name):
+    df_1 = df.reset_index()
+
+    gdf = gpd.GeoDataFrame(
+        df_1,
+        geometry=gpd.points_from_xy(
+            df_1.x, df_1.y, crs="EPSG:4326"))
+    clipped_gdf = gdf.clip(bbox_gdf)
+    df = pd.DataFrame(
+        columns=['lat', 'lon', name])
+    df['lon'] = clipped_gdf.geometry.x
+    df['lat'] = clipped_gdf.geometry.y
+    return df
 
 def open_tif_to_df(tif_fp, name):
     """
