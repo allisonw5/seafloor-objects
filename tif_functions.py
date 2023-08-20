@@ -26,7 +26,20 @@ def read_tifs(path):
 
 
 def night_lights_tif_to_df(filepath, name):
-    """Open night lights data and trasnform to a dataframe."""
+    """Open night lights data and trasnform to a dataframe.
+    
+    Inputs
+    ------
+    filepath: str
+        filepath where TIF is located.
+        
+    name: str
+        The name of the dataframe and column.
+
+    Outputs: 
+    ------
+    df: pd.DataFrame
+    """
     # Open TIF and read it in array
     step1 = rxr.open_rasterio(filepath, masked=True).squeeze()
     step2 = step1.where(step1>0)
@@ -34,7 +47,19 @@ def night_lights_tif_to_df(filepath, name):
     df = step2.to_dataframe(name).dropna()
     return df
 
-def clip_gdf(df, name):
+def clip_gdf(df):
+    """Clip data to bounding box.
+    
+    Inputs
+    ------
+    df: pd.DataFrame
+        dataframe to be clipped
+   
+    Outputs: 
+    ------
+    clipped_gdf: gpd.GepDataFrame
+        Clipped geodataframe.
+    """
     df_1 = df.reset_index()
 
     gdf = gpd.GeoDataFrame(
@@ -42,11 +67,8 @@ def clip_gdf(df, name):
         geometry=gpd.points_from_xy(
             df_1.x, df_1.y, crs="EPSG:4326"))
     clipped_gdf = gdf.clip(bbox_gdf)
-    df = pd.DataFrame(
-        columns=['lat', 'lon', name])
-    df['lon'] = clipped_gdf.geometry.x
-    df['lat'] = clipped_gdf.geometry.y
-    return df
+    
+    return clipped_gdf
 
 def open_tif_to_df(tif_fp, name):
     """
@@ -64,6 +86,6 @@ def open_tif_to_df(tif_fp, name):
     df = pd.DataFrame
 
     """
-    
-    df = tif_fp.to_dataframe(name).dropna()
+    array = rxr.open_rasterio(tif_fp, masked=True)
+    df = array.to_dataframe(name).dropna()
     return df
