@@ -10,7 +10,6 @@ box = {'geometry': [Polygon([(-77.121369, 36.541466),
                              (-71.511922, 32.087495),
                              (-79.317663, 31.036502)])]}
 bbox_gdf = gpd.GeoDataFrame(box, crs='EPSG:4326')
-bbox_gdf.bounds
 
 # Read in the KML and trim it to north and south carolina
 def read_kml(kml_fp: str):
